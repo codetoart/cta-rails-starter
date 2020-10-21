@@ -10,12 +10,12 @@ RUN apk add --update --no-cache \
   libxslt-dev \
   && rm -rf /var/cache/apk/*
 
-WORKDIR /ctapad-backend
+WORKDIR /app
 
 RUN gem update --system
 RUN gem install bundler
 
-ADD . /ctapad-backend
+ADD . /app
 
 EXPOSE 3030
 

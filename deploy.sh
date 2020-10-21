@@ -20,7 +20,7 @@
     docker-compose -f $DOCKER_COMPOSE_FILE build
     docker-compose -f $DOCKER_COMPOSE_FILE down
     docker-compose -f $DOCKER_COMPOSE_FILE up -d
-    docker-compose -f $DOCKER_COMPOSE_FILE exec ctapad bundle exec rails db:migrate
+    docker-compose -f $DOCKER_COMPOSE_FILE exec app bundle exec rails db:migrate
 #else
 #    echo "$FILE docker-compose file not exists."
 #fi
