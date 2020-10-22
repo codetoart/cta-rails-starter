@@ -10,13 +10,12 @@
     elif [ "$1" = "development" ]; then
         DOCKER_COMPOSE_FILE=docker-compose.$1.yml
         echo "Running development environment"
-        rm tmp/pids/server.pid
     else
         echo "Unknown environment"
         exit 1
     fi
 
-    echo $DOCKER_COMPOSE_FILE
+    rm tmp/pids/server.pid
     docker-compose -f $DOCKER_COMPOSE_FILE build
     docker-compose -f $DOCKER_COMPOSE_FILE down
     docker-compose -f $DOCKER_COMPOSE_FILE up -d
