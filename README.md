@@ -34,9 +34,9 @@ Docker is used for deployment in all three environments: development, staging an
     - Use the Cloudfront URL for prod and update in credentials file
     
 ## Deploying the app in development/staging/prod
-Development - `./deploy.sh development`
-staging - `./deploy.sh staging`
-prod - `./deploy.sh prod`
+- Development - `./deploy.sh development`
+- staging - `./deploy.sh staging`
+- prod - `./deploy.sh prod`
 
 ## Checking logs
 `docker-compose logs -f`
