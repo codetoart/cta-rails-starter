@@ -32,3 +32,14 @@ Docker is used for deployment in all three environments: development, staging an
     - Setup AWS S3 credentials in rails credentials file
     - Cofigure Cloudfront URL for prod on AWS and Setup DNS
     - Use the Cloudfront URL for prod and update in credentials file
+    
+## Deploying the app in development/staging/prod
+Development - `./deploy.sh development`
+staging - `./deploy.sh staging`
+prod - `./deploy.sh prod`
+
+## Checking logs
+`docker-compose logs -f`
+
+## Running migration
+`docker-compose exec app ./db-migrage.sh`
