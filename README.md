@@ -1,6 +1,6 @@
 # ctapad-backend
 
-This is a Rails starter project which is used by CodeToArt team for starting any new project.
+This is a Rails starter project which is used by CodeToArt team for starting any new project. We use Rails only for REST API and not for frontend.
 We are using following libraries 
 - Ruby 2.6.6 
 - Rails 6. 
