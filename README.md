@@ -8,7 +8,7 @@ We are using following libraries
 
 It has three environments: development, staging and prod.
 
-##Steps to use this repo
+## Steps to use this repo
 1. Git clone the project and copy the content of the folder in the new repository
 2. **Recreate Master Key**
     - Delete credentials.yml.enc and master.key file
