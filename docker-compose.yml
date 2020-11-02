@@ -4,6 +4,8 @@ services:
 
   redis:
     restart: always
+    ports:
+      - '6379:6379'
     image: redis:latest
 
   app:
@@ -14,6 +16,7 @@ services:
       context: .
       args:
         RAILS_ENV: $RAILS_ENV
+    image: app
     command: ./start.sh
     ports:
       - '3030:3030'
@@ -29,6 +32,15 @@ services:
       - '5401:5432'
     volumes:
       - 'postgres:/var/lib/postgresql/data'
+  
+  sidekiq:
+    depends_on:
+      - 'db'
+      - 'redis'
+    image: 'app'
+    command: bundle exec sidekiq -C ./config/sidekiq.yml
+    env_file:
+      - '.env'
 
 volumes:
   bundle_path:
