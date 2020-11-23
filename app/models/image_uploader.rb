@@ -15,7 +15,7 @@ class ImageUploader < Shrine
     def generate_location(io, record: nil, **context)
         fname = context[:metadata]['filename'].split(".")
         url_path = super.split("/") 
-        generated_url = context[:derivative].present? ? "#{url_path[0]}/#{url_path[1]}/thumb/#{JSON.parse(record["image_data"])["metadata"]["filename"]}" : "#{url_path[0]}/#{url_path[1]}/#{context[:metadata]['filename']}"
+        generated_url = context[:derivative].present? ? "#{url_path[0]}/#{url_path[1]}/thumb/#{JSON.parse(record["#{context[:name]}_data"])["metadata"]["filename"]}" : "#{url_path[0]}/#{url_path[1]}/#{context[:metadata]['filename']}"
         return generated_url
     end
 
